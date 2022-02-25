@@ -1,6 +1,7 @@
 import React from "react";
 import { FunctionInOrder } from "./components/FunctionInOrder";
 import { NoDuplication } from "./components/NoDuplication";
+import { NoDuplicationMap } from "./components/NoDuplicationMap";
 
 import "./App.css";
 
@@ -31,6 +32,8 @@ for (let x = 0; x < myName.length; x++) {
   }
 }
 
+const myArrayWithMap = ["C", "I", "I", "A", "A", "O", "O"];
+
 function App() {
   return (
     <div className="App">
@@ -39,6 +42,9 @@ function App() {
       </p>
       <p>
         <NoDuplication newArrayWitoutDuplication={newArrayWitoutDuplication} />
+      </p>
+      <p>
+        <NoDuplicationMap myArrayWithMap={myArrayWithMap} />
       </p>
     </div>
   );
