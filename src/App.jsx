@@ -2,7 +2,7 @@ import React from "react";
 import { FunctionInOrder } from "./components/FunctionInOrder";
 import { NoDuplication } from "./components/NoDuplication";
 import { NoDuplicationMap } from "./components/NoDuplicationMap";
-
+import { MapMultiplication } from "./components/MapMultiplication";
 import "./App.css";
 
 const sequence = [];
@@ -34,6 +34,9 @@ for (let x = 0; x < myName.length; x++) {
 
 const myArrayWithMap = ["C", "I", "I", "A", "A", "O", "O"];
 
+const myArrayWithMultiplication = [2, 4, 6, 8];
+const newVal = [myArrayWithMultiplication.map((x) => x * 2)];
+
 function App() {
   return (
     <div className="App">
@@ -45,6 +48,9 @@ function App() {
       </p>
       <p>
         <NoDuplicationMap myArrayWithMap={myArrayWithMap} />
+      </p>
+      <p>
+        <MapMultiplication newVal={newVal} />
       </p>
     </div>
   );
