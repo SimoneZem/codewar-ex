@@ -4,6 +4,7 @@ import { NoDuplication } from "./components/NoDuplication";
 import { NoDuplicationMap } from "./components/NoDuplicationMap";
 import { MapMultiplication } from "./components/MapMultiplication";
 import { MapOddNumber } from "./components/MapOddNumber";
+import { MapEvenNumber } from "./components/MapEvenNumber";
 import "./App.css";
 
 const sequence = [];
@@ -47,6 +48,15 @@ const oddArray = numbersArry.map((x) => {
   return null;
 });
 
+const initialArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const evenArray = initialArray.map((x) => {
+  const isEven = x % 2 !== 1;
+  if (isEven) {
+    return x;
+  }
+  return null;
+});
+
 function App() {
   return (
     <div className="App">
@@ -64,6 +74,9 @@ function App() {
       </p>
       <p>
         <MapOddNumber oddArray={oddArray} />
+      </p>
+      <p>
+        <MapEvenNumber evenArray={evenArray} />
       </p>
     </div>
   );
