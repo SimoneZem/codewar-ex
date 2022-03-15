@@ -6,24 +6,16 @@ import { MapMultiplication } from "./components/MapMultiplication";
 import { MapOddNumber } from "./components/MapOddNumber";
 import { MapEvenNumber } from "./components/MapEvenNumber";
 import "./App.css";
+import { RandomInvertedArray } from "./components/RandomInvertedArray";
 
 const sequence = [];
 
 let iterable = "AAAABBBCCDAABBB";
-//dichiaro la funzione iterable
-
 for (let i = 0; i < iterable.length; i++) {
-  // inizializzo i con valore 0, la condizione è che i < della quantità di caratteri, incremente di
-
   if (iterable[i] !== iterable[i + 1]) {
-    // notazione  parentesi per accedere al valore di i di iterable, se strettamente diverso da i + 1
-
     sequence.push(iterable[i]);
-    //aggiungere in coda all'array il valore di i
   }
 }
-
-//utilizzo il ciclo for per iterare fino a che non avremo un carattere diverso dal precendente. se true passeremo al successivo
 
 const newArrayWitoutDuplication = [];
 let myName = "SSSSIIIMMMOOONNEEEEEE";
@@ -57,6 +49,16 @@ const evenArray = initialArray.map((x) => {
   return null;
 });
 
+const randomArray = Array.from({ length: 10 }, () =>
+  Math.floor(Math.random() * 10)
+);
+/*per generare numeri random utilizziamo come già visto il .math, usiamo il from per generare una copia iterabile del
+dato che impostiamo come argomento e impostiamo la lenght dell'array che verrà generato*/
+
+const invertedArray = [...randomArray].reverse();
+/* per creare un array in reverse che non distrugga l'originale creiamo una copia dell'array di partenza al quale applichiamo 
+il reverse. Otterremo così (dati i nostri return) sia l'array con numeri random sia quello con gli elementi invertiti */
+
 function App() {
   return (
     <div className="App">
@@ -77,6 +79,12 @@ function App() {
       </p>
       <p>
         <MapEvenNumber evenArray={evenArray} />
+      </p>
+      <p>
+        <RandomInvertedArray
+          randomArray={randomArray}
+          invertedArray={invertedArray}
+        />
       </p>
     </div>
   );
