@@ -6,7 +6,7 @@ import { MapMultiplication } from "./components/MapMultiplication";
 import { MapOddNumber } from "./components/MapOddNumber";
 import { MapEvenNumber } from "./components/MapEvenNumber";
 import { RandomInvertedArray } from "./components/RandomInvertedArray";
-import { ForEachRandomInverted } from "./components/ForEachRandomInverted";
+import { ManipulatingArray } from "./components/ManipulatingArray";
 
 import "./App.css";
 
@@ -56,10 +56,10 @@ const randomArray = Array.from({ length: 10 }, () =>
 );
 const invertedArray = [...randomArray].reverse();
 
-const rndmArray = Array.from(Array({ lenght: 10 })).forEach(() =>
-  Math.random()
-);
-const invArray = rndmArray.reverse();
+const manipulatedArray = ["pizza", "nachos", "cannelloni"];
+manipulatedArray.unshift("spaghetti");
+manipulatedArray[1] = "lasagna";
+manipulatedArray[2] = "gelato";
 
 function App() {
   return (
@@ -89,7 +89,7 @@ function App() {
         />
       </p>
       <p>
-        <ForEachRandomInverted rndmArray={rndmArray} invArray={invArray} />
+        <ManipulatingArray manipulatedArray={manipulatedArray} />
       </p>
     </div>
   );
