@@ -7,6 +7,7 @@ import { MapOddNumber } from "./components/MapOddNumber";
 import { MapEvenNumber } from "./components/MapEvenNumber";
 import { RandomInvertedArray } from "./components/RandomInvertedArray";
 import { ManipulatingArray } from "./components/ManipulatingArray";
+import { StreetFighters } from "./components/StreetFighters";
 
 import "./App.css";
 
@@ -61,6 +62,13 @@ manipulatedArray.unshift("spaghetti");
 manipulatedArray[1] = "lasagna";
 manipulatedArray[2] = "gelato";
 
+const fighters = "Ryu+Ken+Chun-Li+Cammy+Guile+Sakura+Sagat+Juri";
+/*const fightersToShow = fighters.split("+").join("-");*/
+const splittedArray = fighters.split("+");
+const arraylength = splittedArray.length;
+console.log(">>>> ~ file: App.jsx ~ line 70 ~ arraylength", arraylength);
+const fightersToShow = splittedArray.join("-");
+
 function App() {
   return (
     <div className="App">
@@ -90,6 +98,12 @@ function App() {
       </p>
       <p>
         <ManipulatingArray manipulatedArray={manipulatedArray} />
+      </p>
+      <p>
+        <StreetFighters
+          fightersToShow={fightersToShow}
+          arrayLenght={arraylength}
+        />
       </p>
     </div>
   );
