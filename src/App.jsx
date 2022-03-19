@@ -8,6 +8,8 @@ import { MapEvenNumber } from "./components/MapEvenNumber";
 import { RandomInvertedArray } from "./components/RandomInvertedArray";
 import { ManipulatingArray } from "./components/ManipulatingArray";
 import { StreetFighters } from "./components/StreetFighters";
+import { SegaCult } from "./components/SegaCult";
+import { TestComponent } from "./components/test";
 
 import "./App.css";
 
@@ -36,21 +38,14 @@ const newVal = [myArrayWithMultiplication.map((x) => x * 2)];
 
 const numbersArry = [0, 1, 2, 3, 4, 5];
 const oddArray = numbersArry.map((x) => {
-  const resto = x % 2 === 1;
-  if (resto) {
+  const remenaing = x % 2 === 1;
+  if (remenaing) {
     return x;
   }
   return null;
 });
 
 const initialArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-const evenArray = initialArray.map((x) => {
-  const isEven = x % 2 !== 1;
-  if (isEven) {
-    return x;
-  }
-  return null;
-});
 
 const randomArray = Array.from({ length: 10 }, () =>
   Math.floor(Math.random() * 10)
@@ -68,6 +63,19 @@ const splittedArray = fighters.split("+");
 const arraylength = splittedArray.length;
 console.log(">>>> ~ file: App.jsx ~ line 70 ~ arraylength", arraylength);
 const fightersToShow = splittedArray.join("-");
+
+const newArray = [
+  "Ryu",
+  "Ken",
+  "Chun-Li",
+  "Cammy",
+  "Guile",
+  "Sakura",
+  "Sagat",
+  "Juri",
+];
+const array2 = newArray.pop();
+const segaArray = array2.join;
 
 function App() {
   return (
@@ -88,7 +96,7 @@ function App() {
         <MapOddNumber oddArray={oddArray} />
       </p>
       <p>
-        <MapEvenNumber evenArray={evenArray} />
+        <MapEvenNumber data={initialArray} />
       </p>
       <p>
         <RandomInvertedArray
@@ -97,7 +105,7 @@ function App() {
         />
       </p>
       <p>
-        <ManipulatingArray manipulatedArray={manipulatedArray} />
+        <ManipulatingArray manipulatedArray={manipulatedArray.join(",")} />
       </p>
       <p>
         <StreetFighters
@@ -105,6 +113,10 @@ function App() {
           arrayLenght={arraylength}
         />
       </p>
+      <p>
+        <SegaCult segaArray={segaArray} />
+      </p>
+      <TestComponent />
     </div>
   );
 }
