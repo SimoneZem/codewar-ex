@@ -10,6 +10,7 @@ import { ManipulatingArray } from "./components/ManipulatingArray";
 import { StreetFighters } from "./components/StreetFighters";
 import { SegaCult } from "./components/SegaCult";
 import { TestComponent } from "./components/test";
+import { OppositeDirection } from "./components/OppositeDirection";
 
 import "./App.css";
 
@@ -77,6 +78,14 @@ const newArray = [
 const array2 = newArray.pop();
 const segaArray = array2.join;
 
+const array3 = ["Bloodborne", "Dark Souls", "Elden Ring", "The Division"];
+const gameArray = array3.slice(0, array3.length - 1);
+/*con .slice torniamo un array con gli elementi selezionati, impostando 0 come punto iniziale 
+torneremo tutto l'array, con lenght -1 andremo invece ad agire sull'ultimo elemento dell'array iniziale
+senza necessariamente conoscerne la lunghezza*/
+const addArray = gameArray.concat("Sekiro", "Demon's Souls");
+const fromSoftware = addArray.join(" - ");
+
 function App() {
   return (
     <div className="App">
@@ -117,6 +126,13 @@ function App() {
         <SegaCult segaArray={segaArray} />
       </p>
       <TestComponent />
+      <p>
+        <OppositeDirection
+          gameArray={gameArray}
+          addArray={addArray}
+          fromSoftware={fromSoftware}
+        />
+      </p>
     </div>
   );
 }
