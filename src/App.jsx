@@ -11,6 +11,7 @@ import { StreetFighters } from "./components/StreetFighters";
 import { SegaCult } from "./components/SegaCult";
 import { TestComponent } from "./components/test";
 import { OppositeDirection } from "./components/OppositeDirection";
+import { BirdsOfParadise } from "./components/BirdsOfParadise";
 
 import "./App.css";
 
@@ -86,6 +87,15 @@ senza necessariamente conoscerne la lunghezza*/
 const addArray = gameArray.concat("Sekiro", "Demon's Souls");
 const fromSoftware = addArray.join(" - ");
 
+const arrayBirds = [
+  "Parrots",
+  "Falcons",
+  "Eagles",
+  "Emus",
+  "Caracaras",
+  "Egrets",
+];
+
 function App() {
   return (
     <div className="App">
@@ -132,6 +142,9 @@ function App() {
           addArray={addArray}
           fromSoftware={fromSoftware}
         />
+      </p>
+      <p>
+        <BirdsOfParadise arrayToCompute={arrayBirds} />
       </p>
     </div>
   );
