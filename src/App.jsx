@@ -39,13 +39,6 @@ const myArrayWithMultiplication = [2, 4, 6, 8];
 const newVal = [myArrayWithMultiplication.map((x) => x * 2)];
 
 const numbersArry = [0, 1, 2, 3, 4, 5];
-const oddArray = numbersArry.map((x) => {
-  const remenaing = x % 2 === 1;
-  if (remenaing) {
-    return x;
-  }
-  return null;
-});
 
 const initialArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -76,14 +69,9 @@ const newArray = [
   "Sagat",
   "Juri",
 ];
-const array2 = newArray.pop();
-const segaArray = array2.join;
 
 const array3 = ["Bloodborne", "Dark Souls", "Elden Ring", "The Division"];
 const gameArray = array3.slice(0, array3.length - 1);
-/*con .slice torniamo un array con gli elementi selezionati, impostando 0 come punto iniziale 
-torneremo tutto l'array, con lenght -1 andremo invece ad agire sull'ultimo elemento dell'array iniziale
-senza necessariamente conoscerne la lunghezza*/
 const addArray = gameArray.concat("Sekiro", "Demon's Souls");
 const fromSoftware = addArray.join(" - ");
 
@@ -112,7 +100,7 @@ function App() {
         <MapMultiplication newVal={newVal} />
       </p>
       <p>
-        <MapOddNumber oddArray={oddArray} />
+        <MapOddNumber oddData={numbersArry} />
       </p>
       <p>
         <MapEvenNumber data={initialArray} />
@@ -133,7 +121,7 @@ function App() {
         />
       </p>
       <p>
-        <SegaCult segaArray={segaArray} />
+        <SegaCult arrayOfFighters={newArray} />
       </p>
       <TestComponent />
       <p>
